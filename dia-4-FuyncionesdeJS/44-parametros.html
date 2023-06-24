@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p>primer numero</p>
+<input type="number" id="primerNumero">
+<p>segundo numero</p>
+<input type="number" id="segundoNumero">
+<button onclick="mostrarResuktado()">Calcular</button>
+<h2 id="textoResultado"></h2>
+
+
+   <script>
+    // agreggamos los parametros dentro de la funcion y sin indicarle un valor
+    // cuando los llamamos le damos el valor
+    function suma(a,b){
+        //creamos una variable que guarde el resultado de la suma de los parametros
+        // le añadimos un signo + delante para que los convierta en numeros y no en strings de esta forma 
+        // nos evitamos tener que convertirlos a numeros mas adelante.
+        let resultado = +a+ +b;
+        return resultado;
+    }
+    // llamamos la funcion y le damos los valores y veremos en la consola html la alerta con el resultado de la funcion.
+
+    //alert(suma(50,10));
+
+
+    function mostrarResuktado(){
+        //primero declaramos todas las variables dentro de la funcion del boton, ya que utilizaremos la informacion 
+        //dentro de ellas para realizar la operacion para ello utilizamos el metodo getElementById con su .value para que nos devuelva el valor del input
+        let primerNumero = document.getElementById("primerNumero").value;
+        let segundoNumero = document.getElementById("segundoNumero").value;
+        let textoResultado= document.getElementById("textoResultado");
+
+        //ahora creamos una variable que guarde el resultado de la funcion suma que habiamos creado arriba
+        let resultado = suma(primerNumero,segundoNumero);
+
+        //ahora mostramos el resultado en el  h2 con el id textoResultado haciendo que sea igual a la variable resultado que creamos arriba
+        textoResultado.textContent=resultado;
+    }
+   </script>
+</body>
+</html>

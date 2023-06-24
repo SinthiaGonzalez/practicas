@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dia-3/dia3-2/style.css">
+</head>
+<body>
+    <p>Ingresa tu nombre</p>
+    <input type="text" id="nombreUsuario">
+    <button onclick="SaludarUsuario()">Saludar</button>
+
+    <script>
+        function SaludarUsuario(){
+            alert("Hola " +document.getElementById("nombreUsuario").value)
+        }
+    </script>
+</body>
+</html>

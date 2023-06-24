@@ -1,0 +1,58 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    text-align: center; 
+    background-image: url(https://thumbs.dreamstime.com/b/marco-de-las-fuentes-escuela-sobre-un-fondo-del-rosa-en-colores-pastel-121443555.jpg);
+  background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.contenedor{
+    margin-top: 20rem;
+}
+
+h1 {
+    color: #d11b6a;
+    text-shadow: 2px 2px 2px #7beb9b, 4px 4px 4px #034026;
+  }
+  h3{
+    color: #1bd13c;
+    
+  }
+  button{
+    background-color: #1bd13c;
+    color: #d11b6a;
+    border: 2px solid #aadaba;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  input{
+    background-color: #e6eee9;
+    color: #050505;
+    border: 2px solid #1bd13c;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 1rem;
+    text-align: center;
+  }
+    button:hover{
+        background-color: #d11b6a;
+        color: #1bd13c;
+    }
+#muestraTablaenelHTM{
+    display: inline-block;
+    background-color: #aadaba;
+    color: #034026;
+    border: 2px solid #1bd13c;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4rem;
+    text-align: center;
+    
+
+  }
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juega al pregunta y Respuestas</title>
+</head>
+<body onload="ComienzacuentaRegresiva()">
+
+    <h1 id="CuentaAtras"></h1>
+
+
+    <p>¿Cual es tu nombre?</p>
+    <input type="text"  id="nombre">
+    <p>¿Que deportes te gusta?</p>
+    <input type="text" id="Deportes">
+    <p>¿Color favorito?</p>
+    <input type="text" id="Color">
+    <p>¿Que comida te gusta?</p>
+    <input type="text"  id="Comida">
+    <p>¿Donde te gustaria viajar?</p>
+    <input type="text"  id="Viajes">
+<br>
+<button onclick="finalizado()">Termine!</button>
+<br>
+<button onclick="volverAEmpezar()">Volver a intentar</button>
+
+<audio id="audioFinal">
+    <source src="/dia-3/dia3-9juego-preguntas-respuestas/gameover.mp3.mp3" type="audio/mpeg" >
+    Sonido No habilitado
+</audio>
+    
+    
+    
+    <script>
+//creamos variables donde guardaremos la informacion de los id
+let timepoTerminado;
+let intervaloDETiempo;
+
+//creamos la funcion que iniciara cuando la pagina se cargue
+
+function ComienzacuentaRegresiva(){
+    //utilizamos las variables que acabamos de crear, timepo terminado sera igual a
+ //   settiemout: donde crearemos una funcion (tiempocumplido) y los milisegundos
+ //en el que sera activado o sea llamado.(despues de 30 segundos se ejecutara la funcion tiempocumplido)
+    timepoTerminado= setTimeout(tiempoCumplido, 30000 );
+
+    //la variable intervalo de tiempo va a llamar a la funcion tictac cada 1 segundo 
+    intervaloDETiempo=setInterval(Tictac,1000);
+//luego agarramos el elemento del domuento html con el id "CuentaAtras" y le añadimos texto el numero 30 ya que no le habiamos puesto nada
+    document.getElementById("CuentaAtras").textContent=30;
+}
+
+//procedemos a crear la funcion Tictac
+function Tictac(){
+    //creamos una variable que nos traiga el contenido de la id cuenta atras
+let tiempo= document.getElementById("CuentaAtras").textContent;
+//volvemos a llamar al documento y esta vez le añadimos la variable tiempo menos 1 
+// de este modo arriba creamos el valor a ser restado y abajo lo restamos con 1
+document.getElementById("CuentaAtras").textContent= tiempo -1;
+}
+// procedemos a crear la funcion tiempo cumplido
+function tiempoCumplido(){
+
+    //funcion que permite detener o limpiar o reiniciar y vamos a hacer que valga 0
+    clearInterval(intervaloDETiempo);
+    document.getElementById("CuentaAtras").textContent=0;
+    document.getElementById("audioFinal").play();
+    alert("GAME OVER: Se acabo el tiempo. Intentalo de nuevo.");
+}
+//vamos a crear la funcion del boton finalizado
+function finalizado(){
+    //limpiamso nuevamente el intervalo y le gregamos otro valor.
+    clearInterval(timepoTerminado);
+    clearInterval(intervaloDETiempo);
+
+    let fecha = new Date();
+    let respuestaNombre= document.getElementById("nombre").value;
+    let respuestaDeportes= document.getElementById("Deportes").value;
+    let respuestasColor= document.getElementById("Color").value;
+    let respuestaComida= document.getElementById("Comida").value;
+    let respuestaviajes= document.getElementById("Viajes").value;
+
+let mensaje= fecha.toLocaleDateString("es-Es")+ "\n" +
+
+                 "1. " + respuestaNombre + "\n"+
+                 "2. " + respuestaDeportes + "\n"+
+                 "3. " + respuestasColor + "\n"+
+                 "4. " + respuestaComida + "\n"+
+                 "5. " + respuestaviajes;
+   alert(mensaje);
+}
+
+function volverAEmpezar(){
+    location.reload();
+}
+    </script>
+</body>
+</html>

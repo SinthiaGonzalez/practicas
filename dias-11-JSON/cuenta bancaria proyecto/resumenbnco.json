@@ -1,0 +1,9 @@
+{
+    "banco": "Banco Springfield",
+    "sucuarsal":"Sucursal Springfield AVeniu 745",
+    "titular":"Homero J Simpson",
+    "nro_cuenta":"123456789",
+    "saldo":[{"moneda":"EUR","monto":"1000.00"},{ "moneda":"USD","monto":"100.00"}],
+    "CBU":"1234567891234567891234",
+    "abierto":"2019-01-01"
+}

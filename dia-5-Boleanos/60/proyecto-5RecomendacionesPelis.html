@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendacions de peliculas por genero</title>
+    <link rel="stylesheet" href="./proyecto-5Recomendacionespelis.css">
+    <script src="./proyecto-5Recomendaciojnespelis.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Peliculas</h1>
+        <input type="number"  id="textoEdad" min="0" max="120" placeholder="Edad">
+        <br>
+        <br>
+        <div id="botones">
+            <button onclick="recomendar(`comedia`)">Comedia</button>
+            <button onclick="recomendar(`terror`)">Terror</button>
+            <button onclick="recomendar(`romance`)">Romance</button>
+            <button onclick="recomendar(`accion`)">Accion</button>
+        </div>
+       
+    
+        <h2 id="textoRecomendacion">Aqui esta tu recomendacion:</h2>
+    </div>
+   
+</body>
+
+</html>

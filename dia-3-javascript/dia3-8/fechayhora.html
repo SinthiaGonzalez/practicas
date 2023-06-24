@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador con sonido y fecha</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="comenzarReloj()">
+    <input type="number" id="tiempoElegido">
+    <button onclick="ComenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma">00:00:00</h1>
+
+    <audio id="audio" src="./alarma-good-morning-5-5.mp3" type="audio/mpeg" >Sonido No habilitado</audio>
+    
+
+    <script>
+        let elementosegundos=document.getElementById("tiempoElegido");
+        let elementoTextoAlarma=document.getElementById("textoAlarma");
+        let elemetoSonidoAlarma=document.getElementById("audio");
+        
+        function ComenzarTiempo(){
+            setTimeout(tiempoCumlido,1000*elementosegundos.value);
+        }
+
+        function tiempoCumlido(){
+          
+           elementoTextoAlarma.style.color="green";
+           elemetoSonidoAlarma.play();
+        }
+
+        function comenzarReloj(){
+            setInterval(TicTac,1000);
+        }
+        function TicTac(){
+            let timepoactual= new Date();
+            let hora =timepoactual.getHours();
+            let minutos= timepoactual.getMinutes();
+            let segundos= timepoactual.getSeconds();
+          
+
+            let textoHora= hora + ":" +  minutos + ":" + segundos;
+            elementoTextoAlarma.textContent= textoHora;
+        }
+        
+    </script>
+</body>
+</html>

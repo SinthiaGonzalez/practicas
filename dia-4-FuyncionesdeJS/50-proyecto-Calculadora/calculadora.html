@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./calculadora.css">
+    <script src="./calculadora.js"></script>
+</head>
+<body>
+    <div>
+        <h1> &#x1f5a9; Proyecto Calculadora  &#x1f5a9;</h1>
+    </div>
+    <div>
+        <input type="text" id="numero1">
+        <input type="text" id="numero2">
+    </div>
+    
+    <br>
+    <div>
+        <button onclick="sumar()">+</button>
+        <button onclick="restar()">-</button>
+        <button onclick="multiplicar()">X</button>
+        <button onclick="dividir()">/</button>
+    </div>
+    <br>
+    <div>
+        <div>
+            <button class="boton1" onclick="potencia()">potencia</button>
+            <button class="boton1" onclick="raiz()">raiz</button>
+        </div>
+       
+        <div>
+            <button class="boton1" onclick="absoluto()">absoluto</button>
+            <button class="boton1" onclick="random()">random</button>
+        </div>
+       
+
+    </div>
+    <br>
+    <div>
+        <div>
+            <span>Resultado:</span>
+            <p id="resultado"></p>
+        </div>
+        <div>
+            <button class="but2" onclick="redondear()">round</button>
+            <button class="but2" onclick="redondearAbajo()">floor</button>
+            <button class="but2" onclick="redondearArriba()">ceil</button>
+        </div>
+        
+    </div>
+</body>
+</html>
