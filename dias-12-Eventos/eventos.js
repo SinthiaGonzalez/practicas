@@ -67,4 +67,63 @@ enlace.addEventListener("click", mostrarMEnsaje3);
 
 //* EJEMPLOS DE EVENT KEYDOWN, KEYUP, KEYPRESS
 
-// keydown: cuando se presiona una tecla
+//? keydown: cuando se presiona una tecla
+// cada tecla tiene un codigo ASCII asignado
+// traemos el elemto campo del html para iniciar el ejemplo de los eventos de teclado
+let campo = document.getElementById("micampo");
+// creamos una function que lleve de parametro a event y que solo imprima en el campo las teclas de tipo numerico y de lo contrario que no lo imprima en el campo.
+function verificarnumero(event){
+    // hoy en dia ya no se utiliza el KeyCocde, se utiliza solo el key que representa lo mismo aunque en el ejemplo lo dejarems con el antiguo 
+ if (event.keyCode < 48 || event.keyCode > 57){
+    // si la condicion de los parametros del if se cumple entonces que event no se ejecute
+    event.preventDefault();
+ }
+
+};
+campo.addEventListener("keydown", verificarnumero);
+
+// ? KEYUP: cuando se suelta una tecla 
+
+
+campo.addEventListener("keyup", function(event){
+    // esta function anonima lo que me muestra es el valor que hay dentro del campo cuando se suelta la tecla
+console.log("entrada del usuario: " + event.target.value);
+});
+
+// ? KEYPRESS: cuando se presiona una tecla y se mantiene presionada
+// esta function solo muestra el teclado que fue presionado y no el que fue soltado
+campo.addEventListener("keypress", function(event){
+    console.log("carcter ingresado: " + event.key);
+    
+});
+
+let campo1 = document.getElementById("miInput");
+
+//! EVENTOS DEl MOUSE (MOUSEOVER, MOUSEOUT, MOUSEMOVE, MOUSEUP, MOUSEDOWN)
+
+// vamos a hacer quie aparescan elem,entos html en el mismo mediante los eventos del mouse 
+// creamos las variables que capture a la ul y al boton del html 
+let btn = document.getElementById("miBoton");
+let ul = document.getElementById("milista");
+
+// agregamos el escuchador al boton 
+// btn.addEventListener("click", function(){
+//     ul.style.display = "block";
+// });
+
+// si la function que acabamos de crear le añadimos la propiedad mouseover es decir por encima de... en este caso si el raton anda por encima del boton este desencadenara lo que esta en la fucntion anonima.
+
+// btn.addEventListener("mouseover", function(){
+//     ul.style.display = "block";
+// });
+
+// ahora hacemos lo mismo pero con MOUSEOUT que es cuando el raton sale de un elemento
+
+btn.addEventListener("mouseout", function(){
+    ul.style.display = "block";
+});
+
+// podes añadirle un addevetlistener a todo el documento para que cuando el raton salga de la pagina se ejecute una accion.
+document.addEventListener("mousemove", function(event){
+console.log("Posicion X: " + event.clientX + "  - Posicion Y: " + event.clientY);
+});
