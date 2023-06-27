@@ -40,7 +40,7 @@ xhr.send();
 //? promesas y Fetch (metodos para hacer solicitudes a un servidor o json desde un javascript)
 //* Fetch es un metodo que nos permite hacer peticiones a un servidor o a un archivo json desde un javascript
 //ejemplo de fetch
- //colocamos la url del archivo jscon que queremos solicitar
+ //colocamos la url del archivo json que queremos solicitar
 
 fetch("objeto.json")
 //el metodo then nos permite ejecutar una funcion cuando la peticion se haya completado

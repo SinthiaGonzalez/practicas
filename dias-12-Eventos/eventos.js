@@ -127,3 +127,51 @@ btn.addEventListener("mouseout", function(){
 document.addEventListener("mousemove", function(event){
 console.log("Posicion X: " + event.clientX + "  - Posicion Y: " + event.clientY);
 });
+
+//! EVENTOS EN TIEMPO RAL 
+//*WEBSOCKETS: es una tecnologia que permite la comunicacion bidireccional entre el cliente y el servidor, es decir, el cliente puede enviar informacion al servidor y el servidor puede enviar informacion al cliente en cualquier momento.
+// creamos una variable donde se guarda la url del servidor web soket ficticio
+let urlsoket= new WebSocket("wss://localhost:8080");
+// ahora creamos las varaibles extras que son para capturar los elementos del html o dom
+let mensajeingresado = document.getElementById("mensajeingresado");
+let botonenviar = document.getElementById("btnenviar");
+function mostrarmensaje1 (contenido){
+    let contenedormensaje = document.getElementById("mensajechat");
+    let elemmensaje= document.createElement("p");
+    elemmensaje.innerHTML = contenido;
+    contenedormensaje.appendChild(elemmensaje);
+}
+// ahora le agregamos el escuchador de eventos al boton
+botonenviar.addEventListener("click", function(){
+    let mensaje = mensajeingresado.value;
+    mostrarmensaje1(mensaje);
+    urlsoket.send(mensaje);
+});
+urlsoket.onmessage = function(event){
+    let mensaje= event.data;
+    mostrarmensaje1(mensaje);
+};
+
+//! EVENTOS PERONALIZADOS 
+//capturamos las variables del html
+let audio = document.getElementById("audio1");
+let listamusicas = document.getElementById("listamusic");
+// le colocamos un addEventListener a la lista de musicas
+listamusicas.addEventListener("change", cambiarcancion);
+// creamos la function que va a cambiar la cancion
+function cambiarcancion(event){
+    let cancionelegida = listamusicas.value;
+    // le añadimos al audio src la cancion elegida
+    audio.src = cancionelegida;
+    // le añadimos al audio la propiedad play para que se ejecute la cancion
+    audio.play();
+    // vamos a crear un nuevo evento personalizado
+    let evento = new CustomEvent("cambiodecancion");
+    // le añadimos al audio el evento personalizado
+    audio.dispatchEvent(evento);
+
+}
+audio1.addEventListener("cambiodecancion", mostrarcancion);
+function mostrarcancion(){
+    console.log("La cancion actual es: " + listamusicas.value);
+};
