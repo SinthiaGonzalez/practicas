@@ -1,0 +1,20 @@
+body{
+    background-color: aquamarine;
+}
+#logo{
+    width: 5%;
+}
+#cargando{
+    margin-top: 1rem;
+    width: 6%;    
+}
+p{
+    width: 50%;
+    height: 10vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #161313;
+    background-color: greenyellow;
+  
+
+}
